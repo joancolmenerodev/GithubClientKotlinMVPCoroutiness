@@ -8,9 +8,12 @@ interface UserInfoContract {
 
     interface View : BaseView {
         fun showUserInfo(githubUserResponse: GithubUserResponse)
+        fun setUserErrorLayoutVisible()
+        fun navigateToDetails(login: String)
     }
 
     interface Presenter : BasePresenter<View> {
         fun findUser(username: String)
+        fun onItemClicked(username: String)
     }
 }

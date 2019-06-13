@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+            <ImageView android:layout_width="100dp" android:layout_height="100dp"
+                       tools:src="@mipmap/ic_launcher"
+                       android:id="@+id/iv_githubuser_picture"/>
+
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:orientation="horizontal" android:id="@+id/linear_username"
+                          android:layout_toRightOf="@id/iv_githubuser_picture"
+                          android:layout_toEndOf="@id/iv_githubuser_picture">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:id="@+id/ic_user_logo" android:src="@drawable/ic_username"/>
+                <TextView
+                        android:id="@+id/tv_githubuser_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:layout_marginStart="5dp"
+                        tools:text="joancolmenerodev"/>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:orientation="horizontal" android:id="@+id/linear_location"
+                          android:layout_below="@id/linear_username"
+                          android:layout_toEndOf="@id/iv_githubuser_picture"
+                          android:layout_toRightOf="@id/iv_githubuser_picture">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:id="@+id/ic_contribution_logo" android:src="@drawable/ic_location"/>
+                <TextView
+                        android:id="@+id/tv_githubuser_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:layout_marginStart="5dp"
+                        tools:text="Barcelona" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:orientation="horizontal" android:id="@+id/linear_followers"
+                          android:layout_below="@id/linear_location"
+                          android:layout_toEndOf="@id/iv_githubuser_picture"
+                          android:layout_toRightOf="@id/iv_githubuser_picture">
+                <TextView
+                        android:id="@+id/tv_githubuser_followers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:layout_marginStart="5dp"
+                        tools:text="Followers: 1000" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:orientation="horizontal" android:id="@+id/linear_following"
+                          android:layout_below="@id/linear_followers"
+                          android:layout_toEndOf="@id/iv_githubuser_picture"
+                          android:layout_toRightOf="@id/iv_githubuser_picture">
+                <TextView
+                        android:id="@+id/tv_githubuser_following"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:layout_marginStart="5dp"
+                        tools:text="Following: 0" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

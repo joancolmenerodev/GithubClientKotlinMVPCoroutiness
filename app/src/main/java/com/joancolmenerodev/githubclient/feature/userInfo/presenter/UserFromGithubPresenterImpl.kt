@@ -1,7 +1,5 @@
 package com.joancolmenerodev.githubclient.feature.userInfo.presenter
 
-import com.joancolmenerodev.githubclient.base.networking.Failure
-import com.joancolmenerodev.githubclient.feature.userInfo.model.GithubUserResponse
 import com.joancolmenerodev.githubclient.feature.userInfo.usecases.GetUserFromGithubUseCase
 
 class UserFromGithubPresenterImpl(private val getUserFromGithubUseCase: GetUserFromGithubUseCase) :
@@ -19,6 +17,7 @@ class UserFromGithubPresenterImpl(private val getUserFromGithubUseCase: GetUserF
             },
             {
                 mView?.showProgressBar(false)
+                mView?.setUserErrorLayoutVisible()
                 mView?.showError(it.toString())
             })
     }
@@ -27,19 +26,14 @@ class UserFromGithubPresenterImpl(private val getUserFromGithubUseCase: GetUserF
         mView = view
     }
 
+    override fun onItemClicked(username: String) {
+        mView?.navigateToDetails(username)
+    }
+
     override fun detachView() {
         getUserFromGithubUseCase.dispose()
         mView = null
     }
 
-    private fun onSuccess(githubUserResponse: GithubUserResponse){
-        mView?.showProgressBar(false)
-        mView?.showUserInfo(githubUserResponse)
-    }
-
-    private fun onFailure(failure: Failure){
-        mView?.showProgressBar(false)
-        mView?.showError(failure.toString())
-    }
 
 }

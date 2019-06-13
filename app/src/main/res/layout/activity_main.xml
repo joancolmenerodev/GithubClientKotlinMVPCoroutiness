@@ -28,5 +28,8 @@
             android:indeterminate="true"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
     />
+<include layout="@layout/user_github_item" android:id="@+id/layout_github_user_data" android:visibility="gone"/>
+    <include layout="@layout/github_username_not_found" android:id="@+id/layout_github_user_not_found" android:visibility="gone"/>
+
 
 </LinearLayout>
