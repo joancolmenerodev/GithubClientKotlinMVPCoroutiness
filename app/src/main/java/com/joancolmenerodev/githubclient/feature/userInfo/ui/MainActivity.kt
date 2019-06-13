@@ -41,8 +41,10 @@ class MainActivity : AppCompatActivity(), UserInfoContract.View, KodeinAware {
             .into(iv_githubuser_picture)
         tv_githubuser_username.text = githubUserResponse.login
         tv_githubuser_location.text = githubUserResponse.location
-        tv_githubuser_followers.text = String.format(resources.getString(R.string.github_user_followers),githubUserResponse.followers)
-        tv_githubuser_following.text = String.format(resources.getString(R.string.github_user_following),githubUserResponse.following)
+        tv_githubuser_followers.text =
+            String.format(resources.getString(R.string.github_user_followers), githubUserResponse.followers)
+        tv_githubuser_following.text =
+            String.format(resources.getString(R.string.github_user_following), githubUserResponse.following)
 
     }
 
@@ -67,7 +69,8 @@ class MainActivity : AppCompatActivity(), UserInfoContract.View, KodeinAware {
             it.putString("github_user_login", login)
         }
         intent.putExtras(bundle)
-        startActivity(intent)    }
+        startActivity(intent)
+    }
 
     override fun setUserErrorLayoutVisible() {
         layout_github_user_not_found.visibility = View.VISIBLE
